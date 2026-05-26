@@ -38,7 +38,7 @@ mavutech-coding-standards/
 ## New Machine Setup
 
 ```bash
-git clone git@bitbucket.org:mavutech/mavutech-coding-standards.git
+git clone git@github.com:mavutech/mavutech-coding-standards.git
 cd mavutech-coding-standards
 bash setup.sh
 ```
@@ -50,7 +50,7 @@ Restart VS Code after running setup.
 ## Adding This to a Project
 
 ```bash
-git submodule add git@bitbucket.org:mavutech/mavutech-coding-standards.git .standards
+git submodule add git@github.com:mavutech/mavutech-coding-standards.git .standards
 git commit -m "chore: add mavutech-coding-standards submodule"
 ```
 

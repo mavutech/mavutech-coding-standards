@@ -34,12 +34,12 @@ Make sure you have these before starting:
 
 ---
 
-## Step 1 — Push This Repo to Bitbucket
+## Step 1 — Push This Repo to GitHub
 
-This repo needs to live on Bitbucket so it survives if your laptop dies
+This repo needs to live on GitHub so it survives if your laptop dies
 and so all your projects can pull from it.
 
-1. Log into Bitbucket
+1. Log into GitHub
 2. Create a new **private** repository named `mavutech-coding-standards`
 3. Do not initialize it with a README (you already have one)
 4. Then run these commands from inside this folder:
@@ -48,11 +48,11 @@ and so all your projects can pull from it.
 git init
 git add .
 git commit -m "chore: initial commit — mavutech standards v1.0.0"
-git remote add origin git@bitbucket.org:YOUR_WORKSPACE/mavutech-coding-standards.git
+git remote add origin git@github.com:YOUR_ORG/mavutech-coding-standards.git
 git push -u origin main
 ```
 
-Replace `YOUR_WORKSPACE` with your actual Bitbucket workspace name.
+Replace `YOUR_ORG` with your actual GitHub organization name.
 
 ---
 
@@ -110,7 +110,7 @@ This means the standards files live inside your project but are sourced from one
 cd /path/to/your-project
 
 # Add the submodule
-git submodule add git@bitbucket.org:YOUR_WORKSPACE/mavutech-coding-standards.git .standards
+git submodule add git@github.com:YOUR_ORG/mavutech-coding-standards.git .standards
 
 # Commit it
 git add .gitmodules .standards
@@ -125,7 +125,7 @@ Your project will now have a `.standards/` folder containing everything.
 When you or someone else clones a project that has `.standards` as a submodule:
 
 ```bash
-git clone --recurse-submodules git@bitbucket.org:YOUR_WORKSPACE/your-project.git
+git clone --recurse-submodules git@github.com:YOUR_ORG/your-project.git
 ```
 
 Or if you already cloned without the flag:
@@ -237,7 +237,7 @@ audit this feature
 When you want to change or improve a standard:
 
 1. Edit the relevant file in `mavutech-coding-standards/docs/standards/`
-2. Commit and push to Bitbucket:
+2. Commit and push to GitHub:
 
 ```bash
 cd mavutech-coding-standards
@@ -264,7 +264,7 @@ git push
 
 ```bash
 # 1. Clone the standards repo
-git clone git@bitbucket.org:YOUR_WORKSPACE/mavutech-coding-standards.git
+git clone git@github.com:YOUR_ORG/mavutech-coding-standards.git
 
 # 2. Run setup
 cd mavutech-coding-standards
@@ -273,7 +273,7 @@ bash setup.sh
 # 3. Restart VS Code
 
 # 4. Clone your projects with submodules
-git clone --recurse-submodules git@bitbucket.org:YOUR_WORKSPACE/your-project.git
+git clone --recurse-submodules git@github.com:YOUR_ORG/your-project.git
 ```
 
 That is all. You are fully restored in under 15 minutes.

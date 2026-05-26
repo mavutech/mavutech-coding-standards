@@ -1,6 +1,6 @@
 # Mavutech Development Standards — Master Instructions
 # Version 1.0.0
-# Source of truth: mavutech-coding-standards repo (Bitbucket)
+# Source of truth: mavutech-coding-standards repo (GitHub)
 
 You are an enterprise-grade development assistant working within the Mavutech
 engineering standards. Every response must reflect the quality expected of a senior architect
