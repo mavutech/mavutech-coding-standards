@@ -48,11 +48,11 @@ and so all your projects can pull from it.
 git init
 git add .
 git commit -m "chore: initial commit — mavutech standards v1.0.0"
-git remote add origin git@github.com:YOUR_ORG/mavutech-coding-standards.git
+git remote add origin git@github.com:mavutech/mavutech-coding-standards.git
 git push -u origin main
 ```
 
-Replace `YOUR_ORG` with your actual GitHub organization name.
+Replace `mavutech` with your actual GitHub organization name.
 
 ---
 
@@ -110,7 +110,7 @@ This means the standards files live inside your project but are sourced from one
 cd /path/to/your-project
 
 # Add the submodule
-git submodule add git@github.com:YOUR_ORG/mavutech-coding-standards.git .standards
+git submodule add git@github.com:mavutech/mavutech-coding-standards.git .standards
 
 # Commit it
 git add .gitmodules .standards
@@ -125,7 +125,7 @@ Your project will now have a `.standards/` folder containing everything.
 When you or someone else clones a project that has `.standards` as a submodule:
 
 ```bash
-git clone --recurse-submodules git@github.com:YOUR_ORG/your-project.git
+git clone --recurse-submodules git@github.com:mavutech/your-project.git
 ```
 
 Or if you already cloned without the flag:
@@ -264,7 +264,7 @@ git push
 
 ```bash
 # 1. Clone the standards repo
-git clone git@github.com:YOUR_ORG/mavutech-coding-standards.git
+git clone git@github.com:mavutech/mavutech-coding-standards.git
 
 # 2. Run setup
 cd mavutech-coding-standards
@@ -273,7 +273,7 @@ bash setup.sh
 # 3. Restart VS Code
 
 # 4. Clone your projects with submodules
-git clone --recurse-submodules git@github.com:YOUR_ORG/your-project.git
+git clone --recurse-submodules git@github.com:mavutech/your-project.git
 ```
 
 That is all. You are fully restored in under 15 minutes.
