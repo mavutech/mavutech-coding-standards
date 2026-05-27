@@ -361,3 +361,68 @@ export const CONFIG = {
 - Never access `process.env` directly in components or services
 - All config goes through the centralized config file
 - Never commit `.env` files — maintain `.env.example` with placeholder values
+
+---
+
+## React File Review Checklist
+
+Run this checklist before making any changes to an existing React file.
+Report all findings before generating any new code.
+
+### DRY
+- [ ] Any logic that duplicates something in `hooks/`, `utils/`, or another component?
+- [ ] Any inline logic that has no dependency on rendering and belongs in a custom hook?
+- [ ] Any JSX pattern repeated two or more times that should be extracted to a shared component?
+- [ ] Any constant value (number, string, URL, timeout) that appears more than once?
+
+### Localization
+- [ ] Any hardcoded string literals in JSX? (text, labels, placeholders, `aria-label`, button text)
+- [ ] Any error messages rendered directly from a `catch` block without going through `t()`?
+- [ ] Any navigation titles, modal headings, or tooltip content not using `t()`?
+
+### Magic Numbers and Hardcoded Values
+- [ ] Any numeric literals that should be named constants?
+- [ ] Any hardcoded URLs, timeouts, limits, or thresholds not coming from `config/`?
+
+### Component Health
+- [ ] File over 200 lines? If so, identify the split point.
+- [ ] Component handling more than one concern? If so, propose the extraction.
+- [ ] Business logic inside the component that belongs in a hook?
+- [ ] Direct API calls (Axios, fetch) inside the component instead of a service?
+
+### Code Quality
+- [ ] Any `console.log` statements?
+- [ ] Any commented-out code?
+- [ ] Any TypeScript `any` types?
+- [ ] Missing JSDoc on the component or any exported function?
+- [ ] Any async operation missing loading, success, or error state handling?
+
+### Report Format
+
+Present all findings in this block before writing any code:
+
+```
+REACT FILE REVIEW: [filename]
+
+DRY VIOLATIONS:
+  - [description] — [line or pattern]
+    Proposed fix: extract to [hook name | util name | component name] in [path]
+
+LOCALIZATION VIOLATIONS:
+  - "[hardcoded string]" — [line or prop]
+    Suggested key: [feature.screen.element]
+
+MAGIC NUMBERS / HARDCODED VALUES:
+  - [value] — [line]
+    Suggested constant: [CONSTANT_NAME] in [constants file]
+
+COMPONENT HEALTH:
+  - [finding] — [proposed action]
+
+CODE QUALITY:
+  - [finding] — [proposed action]
+
+Confirm to proceed, or adjust scope.
+```
+
+If no violations are found in a category, omit that category from the report entirely.

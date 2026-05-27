@@ -56,6 +56,12 @@ STANDARDS APPLYING:
   [ ] analytics.md          — if new screen or user interaction is involved
   [ ] security.md           — always evaluated, flagged when risk is present
 
+DRY CHECK:
+  Scanned hooks/, utils/, services/, shared/ for existing implementations:
+  - [List any reusable hook, util, or component that already covers part of this task — or "None found"]
+  Hardcoded strings found in target file(s):
+  - [List any string literals that need localization keys — or "None found"]
+
 ANALYTICS EVENTS PROPOSED:
   - [event_name] — [where it fires and why]
 
@@ -309,3 +315,37 @@ Any of the following phrases activate a full codebase audit:
    "Add `#file:.standards/audit/audit-prompt.md` to this chat so I can run the full audit."
 
 3. Output the complete scored markdown report with risk-ordered remediation plan.
+
+---
+
+## RULE 13 — DRY (DON'T REPEAT YOURSELF)
+
+### Check Before Creating
+
+Before writing any new logic, scan the codebase for existing implementations:
+
+- **Hooks:** does a hook already exist for this concern? (`features/*/hooks/`, `src/hooks/`)
+- **Utilities:** does a utility function already exist? (`*/utils/`)
+- **Services:** does a service method already exist? (`*/services/`)
+- **Components:** does a similar component already exist in `shared/` or another feature?
+
+If something already exists that covers the need — use it. Do not create a duplicate.
+If something partially covers the need — extend it rather than creating a parallel version.
+
+### Extraction Triggers
+
+Extract logic into a shared hook or utility when any of these are true:
+- The same logic appears in two or more components, hooks, or files
+- A component contains logic with no direct dependency on rendering (belongs in a hook)
+- A hook handles more than one distinct concern (split into focused hooks)
+- A magic number or string literal appears more than once (extract to a constants file)
+
+### Reporting Duplicates
+
+When editing an existing file, if duplication is found:
+1. Flag it in the DRY CHECK block before touching any code
+2. Propose the extraction (what to extract, where it goes, what it will be named)
+3. Wait for confirmation before extracting
+
+Never silently duplicate logic. Never create a new hook, utility, or component without
+first confirming nothing equivalent already exists.
