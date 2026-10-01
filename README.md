@@ -3,7 +3,7 @@
 Single source of truth for all Mavutech / Technically Focused engineering standards.
 Every project references this repo. Nothing lives in individual codebases.
 
-**Version 1.0.0** — Audit system added. Security hardened across all standards.
+**Version 1.1.0** — Reports skill added. Audit and security standards retained.
 
 ---
 
@@ -17,6 +17,10 @@ mavutech-coding-standards/
   audit/
     README.md                   # How to run an audit
     audit-prompt.md             # Full audit execution logic (reference in Copilot)
+
+  reports/
+    README.md                   # How to use the reports skill
+    SKILL.md                    # Structured reports and plans workflow
 
   docs/standards/
     react-web.md                # React web — components, hooks, styling, routing, security
@@ -76,6 +80,19 @@ Then reference your files and the audit prompt:
 
 You get back a scored markdown report across 8 categories with a risk-ordered remediation plan.
 See `audit/README.md` for full instructions.
+
+---
+
+## Creating Reports and Plans
+
+Reference the reports skill when you need a clear report, assessment, proposal, or plan:
+
+```text
+Use #file:.standards/reports/SKILL.md and create a report on [topic].
+```
+
+The output includes a summary, key points, a useful table, risks with mitigations,
+recommendations, and next steps. Implementation still requires explicit approval.
 
 ---
 

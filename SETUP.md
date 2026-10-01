@@ -13,6 +13,7 @@ It contains:
 - A master instruction file that VS Code Copilot reads automatically on every prompt
 - Individual standards files for every layer of your stack
 - A codebase audit system that scores any project against your standards
+- A reports skill for clear, consistent reports and plans
 - A setup script that wires everything into VS Code
 
 Nothing lives in your individual project repos — they just reference this one.
@@ -288,6 +289,8 @@ That is all. You are fully restored in under 15 minutes.
 | `setup.sh` | Injects master instructions into VS Code settings |
 | `audit/audit-prompt.md` | Full audit scoring logic — reference in Copilot to run an audit |
 | `audit/README.md` | How to run audits and interpret results |
+| `reports/SKILL.md` | Reusable instructions for structured reports and plans |
+| `reports/README.md` | How to invoke and use the reports skill |
 | `docs/standards/react-web.md` | React web component, hook, and styling standards |
 | `docs/standards/react-native.md` | React Native / Expo standards |
 | `docs/standards/redux.md` | Redux RTK and legacy patterns |
