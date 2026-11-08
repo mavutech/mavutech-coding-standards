@@ -35,6 +35,7 @@ mavutech-coding-standards/
     analytics.md                # Firebase Analytics, event naming, PII rules
     security.md                 # Cross-cutting security — auth, input, AI threat vectors
     refactor-guide.md           # Audit and refactor workflow with security checklist
+    ticket-lifecycle.md         # Tracker-neutral completion, approval, and retention
 ```
 
 ---

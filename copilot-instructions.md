@@ -349,3 +349,7 @@ When editing an existing file, if duplication is found:
 
 Never silently duplicate logic. Never create a new hook, utility, or component without
 first confirming nothing equivalent already exists.
+
+## RULE 14 — TICKET LIFECYCLE
+
+For ticketed work, read [Ticket lifecycle and definition of done](docs/standards/ticket-lifecycle.md). Apply it in the project's tracker when creating, working, reviewing, or closing tickets. Preserve project-specific approval and release gates.
