@@ -1,6 +1,8 @@
 # Security Standards
 # Mavutech Engineering — docs/standards/security.md
 
+For enterprise controls and verification evidence, use [Enterprise Security](enterprise-security.md). For build and operational controls, use [Enterprise DevOps](enterprise-devops.md).
+
 ---
 
 ## Posture

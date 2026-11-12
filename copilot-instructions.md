@@ -55,6 +55,8 @@ STANDARDS APPLYING:
   [ ] unit-tests.md         — always flagged, priority confirmed below
   [ ] analytics.md          — if new screen or user interaction is involved
   [ ] security.md           — always evaluated, flagged when risk is present
+  [ ] enterprise-security.md — for material trust, identity, sensitive data, exposure, or supply-chain changes
+  [ ] enterprise-devops.md  — for CI/CD, infrastructure, releases, and service operations
 
 DRY CHECK:
   Scanned hooks/, utils/, services/, shared/ for existing implementations:
@@ -353,3 +355,11 @@ first confirming nothing equivalent already exists.
 ## RULE 14 — TICKET LIFECYCLE
 
 For ticketed work, read [Ticket lifecycle and definition of done](docs/standards/ticket-lifecycle.md). Apply it in the project's tracker when creating, working, reviewing, or closing tickets. Preserve project-specific approval and release gates.
+
+## RULE 15 — ENTERPRISE SECURITY AND DEVOPS
+
+Apply [Enterprise Security](docs/standards/enterprise-security.md) alongside the baseline security standard for material changes to trust boundaries, identities, sensitive data, externally exposed services, privileged workflows, or critical dependencies. Apply [Enterprise DevOps](docs/standards/enterprise-devops.md) to CI/CD, infrastructure, deployment, rollback, and operational readiness. Record scope, evidence, unresolved risk and the accountable owner. A failed or unverified mandatory control blocks the affected release recommendation unless a permitted, documented exception is approved. Preserve the existing assessment, audit, ticket, and release authorization gates.
+
+
+## Enterprise QA integration
+For QA planning and implementation/ticket verification read docs/standards/enterprise-qa.md and docs/standards/ticket-lifecycle.md. Acceptance criteria are the primary, strictest product QA gate. Approved designer mocks are a secondary comparison with practical tolerance; minor cosmetic drift is advisory unless explicitly required. Preserve mandatory security/accessibility controls and explicit owner delivery gates. Report criterion results, design observations and material risks separately. Meera Iyer (enterprise-qa) owns independent QA verification; developer completion, QA verification, owner acceptance and release are separate decisions.

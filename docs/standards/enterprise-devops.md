@@ -1,0 +1,28 @@
+# Enterprise DevOps Standard
+
+Apply this standard to build and release pipelines, environment and infrastructure changes, deployments, rollback, and service operations. Use [Enterprise Security](enterprise-security.md) for application and organizational controls. The authorized release owner controls the deployment decision; reviewers report readiness and evidence. Production, staging, and development policies can differ by risk; define the differences explicitly.
+
+## Required controls
+
+| ID | Control | Minimum evidence |
+|---|---|---|
+| ED-01 | Version pipeline and infrastructure definitions. Use reviewed changes, protected release refs and required checks. Document environment ownership, access boundaries, approved configuration sources, and drift detection. No unattended production mutation from an unreviewed plan. | Reviewed revision, branch and environment policies, IaC plan and drift status when applicable. |
+| ED-02 | Separate untrusted PR jobs from privileged build/publish/deploy jobs. Do not execute contributor code in a privileged context such as `pull_request_target` with secrets or write access. Set minimum token permissions per job, use short-lived scoped workload identity when available, and restrict trusted refs/environments. Pin third-party actions to reviewed full commit SHAs and images to immutable digests where used. Isolate runners and caches across trust boundaries. | Workflow event/checkout, token scopes, secret reference names without values, runner/cache boundary and negative PR-path evidence. |
+| ED-03 | Build the reviewed source revision once and promote the same immutable artifact. Record source SHA, artifact digest, builder identity and build inputs. Produce a dependency inventory or SBOM and verifiable provenance for production artifacts; verify the expected signer or builder, source, inputs, artifact digest and signature against policy before promotion. Do not assert a SLSA level without supporting evidence. | Build receipt, inventory/SBOM, provenance or attestation, verification outcome and deploy manifest with the same digest. |
+| ED-04 | Gate releases on the applicable build, tests, type checks, security checks and independent review. Maintain acceptance evidence for preserved behavior and review the final diff. Use protected production environments and auditable approvals bound to the artifact and target. Distinguish a completed implementation ticket from a completed release. | Required-check results for the reviewed revision, accepted behaviors, exact target and approval record. |
+| ED-05 | Define a rollout method proportional to impact, with owner, monitoring window, health checks and stop/rollback triggers. Assess database migration compatibility, safe deployment ordering, data protection and the point after which rollback requires recovery or a forward fix. Rehearse recovery for material changes in a permitted environment; record known-good artifact and recovery limits. | Rollout and rollback/recovery instructions, prior known-good digest, verified backup/restore or rehearsal evidence when required, and named decision owner. |
+| ED-06 | Before release, define service indicators and target objectives for material customer paths, alerts, dashboards, escalation and incident ownership. Keep telemetry safe and useful. Verify deployed artifact identity and acceptance checks in the authorized environment; compare post-deploy health against the agreed thresholds. Pause or escalate when thresholds fail. | Monitored indicators and thresholds, deploy receipt, smoke results at the target, and observed post-release health or explicitly pending verification. |
+| ED-07 | Maintain change and incident records, ownership and recovery objectives. Set RTO and RPO according to business impact; confirm restore readiness with periodic evidence, not the presence of backups alone. Capture failures and follow-ups without exposing secrets. Track remediation and dated exceptions. | Incident/runbook links, restore test evidence, exception expiry, and owner for follow-up. |
+
+## Release handoff and decision
+
+1. Name the release owner, target environment, change scope, reviewed SHA, artifact digest and source of approvals. Keep a single writer for a shared release channel or environment.
+2. Record each mandatory gate as **passed**, **failed**, **unverified**, or **not applicable with reason**. Block release readiness when a material requirement fails, is unverified, or lacks the required approval. An exception requires the accountable owner's documented acceptance, compensating controls, expiration and recheck.
+3. Carry forward the approved behavior checks and planned rollback. After an authorized release, read back the actual deployed version and check material customer paths and operational signals. A green pipeline alone does not prove the expected version reached the target or that recovery works.
+4. Record the evidence and link implementation, verification, and release work as appropriate under the [ticket lifecycle](ticket-lifecycle.md). Use [Enterprise Security](enterprise-security.md) for incident and secret handling. No live mutation, scanning or release is authorized by this document alone.
+
+## References
+
+- [GitHub Actions secure use](https://docs.github.com/en/actions/reference/security/secure-use) for workflow, privilege and untrusted checkout controls.
+- [SLSA artifact verification](https://slsa.dev/spec/v1.2/verifying-artifacts) for provenance verification against expectations.
+- [NIST SSDF](https://csrc.nist.gov/projects/ssdf) for protecting software and build processes; [Google SRE service objectives](https://sre.google/sre-book/service-level-objectives/) for measurable service targets.

@@ -34,6 +34,9 @@ mavutech-coding-standards/
     unit-tests.md               # Jest patterns for frontend, backend, security tests
     analytics.md                # Firebase Analytics, event naming, PII rules
     security.md                 # Cross-cutting security — auth, input, AI threat vectors
+    enterprise-security.md      # Trust, identity, data protection, and security verification
+    enterprise-qa.md            # Acceptance traceability, design comparison, defects and retesting
+    enterprise-devops.md        # CI/CD, artifact integrity, rollout, and operations
     refactor-guide.md           # Audit and refactor workflow with security checklist
     ticket-lifecycle.md         # Tracker-neutral completion, approval, and retention
 ```

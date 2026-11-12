@@ -54,6 +54,8 @@ For each category:
 
 ### CATEGORY 1 — SECURITY (Weight: 25%)
 
+Where enterprise scope applies, also read [Enterprise Security](../docs/standards/enterprise-security.md) and [Enterprise DevOps](../docs/standards/enterprise-devops.md). Map confirmed applicable findings to this category without double-counting baseline violations. Record missing or out-of-scope runtime, pipeline and deployment evidence separately. Never infer a passing control from missing evidence or treat the weighted score as release authorization.
+
 Check for every item in this list:
 
 **Authentication**

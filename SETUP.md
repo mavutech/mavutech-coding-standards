@@ -302,6 +302,9 @@ That is all. You are fully restored in under 15 minutes.
 | `docs/standards/unit-tests.md` | Jest testing patterns |
 | `docs/standards/analytics.md` | Firebase Analytics event standards |
 | `docs/standards/security.md` | Full security standards including AI threat vectors |
+| `docs/standards/enterprise-security.md` | Enterprise security controls and evidence for risk decisions |
+| `docs/standards/enterprise-devops.md` | CI/CD, artifact verification, deployment and operational evidence |
+| `docs/standards/enterprise-qa.md` | Acceptance verification, practical mock comparison, defects and retesting |
 | `docs/standards/refactor-guide.md` | How to audit and refactor legacy code |
 
 ---
