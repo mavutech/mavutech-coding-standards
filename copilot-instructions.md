@@ -354,6 +354,8 @@ first confirming nothing equivalent already exists.
 
 ## RULE 14 — TICKET LIFECYCLE
 
+For ticket drafting, creation, updates, or readiness review, apply the [Tickets skill](tickets/SKILL.md). Enforce the `AREA - CODE - Action` title format, Description, Problem, Solution, Acceptance criteria, and Technical details when needed before saving or declaring a ticket ready.
+
 For ticketed work, read [Ticket lifecycle and definition of done](docs/standards/ticket-lifecycle.md). Apply it in the project's tracker when creating, working, reviewing, or closing tickets. Preserve project-specific approval and release gates.
 
 ## RULE 15 — ENTERPRISE SECURITY AND DEVOPS

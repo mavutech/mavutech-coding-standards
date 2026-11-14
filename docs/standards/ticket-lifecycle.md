@@ -4,6 +4,7 @@ Use this standard for stories, bugs, technical tasks, and verification work in a
 
 ## Create and start
 
+- Apply the [Tickets skill](../../tickets/SKILL.md) when drafting, creating, updating, or reviewing a ticket. Every ticket needs an `AREA - CODE - Action` title, Description, Problem, Solution, and testable Acceptance criteria; add Technical details when needed. Check these before saving or declaring the ticket ready.
 - Record the outcome, observable acceptance criteria, dependencies, and required approvals. Link technical work to its parent outcome.
 - Name the completion boundary when it matters. Implementation, review, staging verification, and release can be separate tickets or milestones.
 - Use the project's equivalent of In progress while work is active. Use In review or Blocked when the next action is verification, a decision, or an unmet dependency.

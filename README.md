@@ -22,6 +22,9 @@ mavutech-coding-standards/
     README.md                   # How to use the reports skill
     SKILL.md                    # Structured reports and plans workflow
 
+  tickets/
+    SKILL.md                    # Required ticket title, body, and readiness checks
+
   docs/standards/
     react-web.md                # React web — components, hooks, styling, routing, security
     react-native.md             # Expo/React Native — components, navigation, security
@@ -101,6 +104,8 @@ recommendations, and next steps. Implementation still requires explicit approval
 ---
 
 ## Daily Development Workflow
+
+For ticket creation or review, use `tickets/SKILL.md` (or `.standards/tickets/SKILL.md` in a project). Every ticket requires an `AREA - CODE - Action` title, such as `FE - SE01 - Add button`, plus Description, Problem, Solution, and testable Acceptance criteria. Include Technical details when needed. The skill checks authoring quality; it does not install GitHub-side validation.
 
 Copilot reads `copilot-instructions.md` automatically on every prompt.
 Before generating any code it will pause, confirm the task, declare which standards apply,
